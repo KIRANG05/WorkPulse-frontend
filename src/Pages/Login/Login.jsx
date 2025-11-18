@@ -28,6 +28,7 @@ function Login() {
       if (response.data.isSuccess) {
 
         login({
+          id: response.data.id,
         token: response.data.accessToken,
         refreshToken: response.data.refreshToken,
         username: response.data.username,
@@ -38,6 +39,7 @@ function Login() {
         localStorage.setItem("username", response.data.username);
         localStorage.setItem("role", response.data.role);
         localStorage.setItem("refreshToken", response.data.refreshToken);
+        localStorage.setItem("userId", response.data.id);
 
         Swal.fire({
           icon: "success",

@@ -16,6 +16,10 @@ import DashboardHome from "./Pages/AdminDashboard/DashboardHome";
 import EditEmployee from "./Pages/EditEmployee/EditEmployee";
 import Tasks from "./Pages/AdminDashboard/Tasks";
 import Reports from "./Pages/AdminDashboard/Reports";
+import Profile from "./Pages/AdminDashboard/Settings/Profile";
+import RoleManagement from "./Pages/AdminDashboard/Settings/RoleManagement";
+import ChangePassword from "./Pages/AdminDashboard/Settings/ChangePassword";
+import AdminLeaves from "./Pages/AdminDashboard/AdminLeaves";
 
 function App() {
   return (
@@ -35,6 +39,11 @@ function App() {
          <Route path="employees" element={<Employees />} />
          <Route path="tasks" element={<Tasks />} />
          <Route path="reports" element={<Reports />} />
+         <Route path="settings/profile" element={<Profile />} />
+         <Route path="settings/role" element={<RoleManagement />} />
+         <Route path="settings/change-password" element={<ChangePassword />} />
+         <Route path="/admin-dashboard/leaves" element={<AdminLeaves />} />
+
          </Route>
          <Route path="employeeUpdateById/:id" element={<EditEmployee />} />
         <Route path="/hr-dashboard" element={<HrDashboard />} />

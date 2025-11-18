@@ -96,6 +96,57 @@
   background: #d1d5db;
 }
 
+.imageUploadSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imageLabel {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.profileImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  transition: 0.3s;
+}
+
+.imageLabel:hover .profileImage {
+  opacity: 0.8;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.imageLabel:hover .overlay {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.editText {
+  color: white;
+  font-size: 18px;
+}
+
+
+
 /* Smooth fade animation */
 @keyframes fadeIn {
   from {

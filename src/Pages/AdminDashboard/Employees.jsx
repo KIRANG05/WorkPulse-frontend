@@ -9,6 +9,8 @@ function Employees() {
   const [employees, setEmployees] = useState([]);
   const navigate = useNavigate()
 
+  const imageBaseUrl = "http://localhost:8081/images/";
+
   useEffect(() => {
     fetchEmployees();
   }, []);
@@ -65,6 +67,7 @@ function Employees() {
         <thead>
           <tr>
             <th>Emp Id</th>
+            <th>Profile Image</th>
             <th>Name</th>
             <th>Company</th>
             <th>Salary</th>
@@ -76,6 +79,18 @@ function Employees() {
             employees.map((emp) => (
               <tr key={emp.id}>
                 <td>{emp.id}</td>
+               <td>
+          <img
+            src={
+              emp.profileImage
+                ? `${imageBaseUrl}${emp.profileImage}` // Backend folder mapping
+                : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png" // Default placeholder
+            }
+            alt={emp.name}
+            className={styles.profileImage}
+          />
+        </td>
+
                 <td>{emp.name}</td>
                 <td>{emp.company}</td>
                 <td>{emp.salary}</td>

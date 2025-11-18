@@ -134,3 +134,59 @@
   cursor: pointer;
   color: white;
 }
+
+
+/* 🔹 SETTINGS MENU MAIN ITEM */
+.settingsMenu {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 10px 0;
+}
+
+.settingsMenu:hover {
+  color: #93c5fd; /* light blue on hover */
+}
+
+/* 🔹 SUBMENU LIST UNDER SETTINGS */
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 8px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.submenu li {
+  font-size: 14px;
+  margin: 8px 0;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: color 0.2s, background 0.2s;
+}
+
+.submenu li:hover {
+  color: #60a5fa;
+}
+
+/* 🔹 ACTIVE PAGE HIGHLIGHT (already used via isActive) */
+.active {
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+/* 🔹 Optional subtle animation for submenu open */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

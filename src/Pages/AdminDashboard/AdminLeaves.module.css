@@ -1,0 +1,57 @@
+.container {
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  padding: 10px;
+}
+
+
+.table th {
+  background-color: #f4f4f4;
+}
+
+/* status colors */
+.pending {
+  color: blue;
+  font-weight: bold;
+}
+
+.approved {
+  color: green;
+  font-weight: bold;
+}
+
+.rejected {
+  color: red;
+  font-weight: bold;
+}
+
+.status-pending {
+  background: orange;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 6px;
+}
+
+.status-approved {
+  background: green;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 6px;
+}
+
+.status-rejected {
+  background: red;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 6px;
+}

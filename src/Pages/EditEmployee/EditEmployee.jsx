@@ -8,18 +8,25 @@ import api from "../../Services/api";
 function EditEmployee() {
   const { id } = useParams(); // employee id from URL
   const navigate = useNavigate();
+  const [selectedImage, setSelectedImage] = useState(null);
   const [employee, setEmployee] = useState({
     name: "",
     company: "",
     salary: "",
+     role: "",
   });
 
+  const imageBaseUrl = "http://localhost:8081/images/";
   // Fetch employee details by ID
  useEffect(() => {
   const fetchEmployee = async () => {
     try {
       const response = await api.get(`/employee/employeeDetails/${id}`);
       setEmployee(response.data.employee);
+      setEmployee({
+        ...empData,
+        role: empData.user?.role || "", // map role from user
+      });
     } catch (err) {
       console.error("Error fetching employee:", err);
     }
@@ -28,29 +35,62 @@ function EditEmployee() {
   fetchEmployee();
 }, [id]);
 
+const handleImageClick = () => {
+  document.getElementById("profileImageInput").click();
+};
 
+const handleImageChange = (e) => {
+  if (e.target.files && e.target.files[0]) {
+    setSelectedImage(e.target.files[0]);
+  }
+};
   // Handle form change
   const handleChange = (e) => {
     setEmployee({ ...employee, [e.target.name]: e.target.value });
   };
 
-  // Update employee
  const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    debugger
-    const response = await api.put(`/employee/employeeUpdateById/${id}`, employee);
+    const formData = new FormData();
+
+    // Always include the employee JSON
+    formData.append(
+      "employee",
+      JSON.stringify({
+        ...employee,
+        profileImage: employee.profileImage, // keep existing image if not changed
+      })
+    );
+
+    // Append the image only if a new one is selected
+    if (selectedImage) {
+      formData.append("image", selectedImage);
+    } else {
+      // If no new image, send empty blob (optional)
+      formData.append("image", new Blob(), ""); 
+    }
+
+    const response = await api.put(
+      `/employee/employeeUpdateById/${id}`,
+      formData,
+      { headers: { "Content-Type": "multipart/form-data" } }
+    );
+
     Swal.fire({
-        icon: "success",
-        title: response.data.status,
-        text: response.data.message,
-    })
-    navigate("/admin-dashboard"); // go back to list
+      icon: "success",
+      title: response.data.status,
+      text: response.data.message,
+    });
+
+    navigate("/admin-dashboard");
   } catch (err) {
     console.error("Update error:", err);
   }
 };
+
+
 
 
   return (
@@ -84,6 +124,30 @@ function EditEmployee() {
           className={styles.editInput}
           required
         />
+         <div className={styles.imageContainerWrapper}>
+  <div className={styles.imageContainer} onClick={handleImageClick}>
+    <img
+      src={
+        selectedImage
+          ? URL.createObjectURL(selectedImage)
+          : employee.profileImage
+          ? `${imageBaseUrl}${employee.profileImage}`
+          : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png" // fallback if no image
+      }
+      alt="Profile"
+      className={styles.profileImg}
+      onError={(e) => (e.target.src = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png")}
+    />
+    <input
+      type="file"
+      id="profileImageInput"
+      accept="image/*"
+      onChange={handleImageChange}
+      style={{ display: "none" }}
+    />
+  </div>
+</div>
+
       
 
         <button type="submit" className={styles.updateBtn}>
