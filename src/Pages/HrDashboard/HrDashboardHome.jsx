@@ -22,7 +22,7 @@ function HrDashboardHome() {
         title: res.data.message,
         text: "You have successfully punched in!",
         timer: 2000,
-        showConfirmButton: false,
+        // showConfirmButton: false,
       });
 
       if (res.data.isSuccess) setTodayAttendance(res.data.data);
@@ -40,7 +40,7 @@ function HrDashboardHome() {
         title: res.data.message,
         text: "You have successfully punched out!",
         timer: 2000,
-        showConfirmButton: false,
+        // showConfirmButton: false,
       });
 
       if (res.data.isSuccess) setTodayAttendance(res.data.data);

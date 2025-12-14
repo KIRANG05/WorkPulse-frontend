@@ -35,6 +35,19 @@ import HrChangePassword from "./Pages/HrDashboard/HrChangePassword";
 import HrAddTask from "./Pages/HrDashboard/Task/HrAddTask";
 import HrTaskDetails from "./Pages/HrDashboard/Task/HrTaskDetails";
 import HrUpdateTask from "./Pages/HrDashboard/Task/HrUpdateTask";
+import EmployeeDashboardHome from "./Pages/EmployeeDashboard/EmployeeDashboardHome";
+import EmployeeTodo from "./Pages/EmployeeDashboard/EmployeeTodo";
+import EmployeeAttendance from "./Pages/EmployeeDashboard/EmployeeAttendance";
+import EmployeeChangePassword from "./Pages/EmployeeDashboard/EmployeeChangePassword";
+import EmployeeTaskDetails from "./Pages/EmployeeDashboard/Task/EmployeeTaskDetails";
+import EmployeeUpdateTask from "./Pages/EmployeeDashboard/Task/EmployeeUpdateTask";
+import EmployeeLeaveSummary from "./Pages/EmployeeDashboard/Leave/EmployeeLeaveSummary";
+import EmployeeApplyLeave from "./Pages/EmployeeDashboard/Leave/EmployeeApplyLeave";
+import EmployeeNotification from "./Pages/EmployeeDashboard/EmployeeNotification";
+import HrProfile from "./Pages/HrDashboard/HrProfile";
+import EmployeeProfile from "./Pages/EmployeeDashboard/EmployeeProfile";
+import HrEditEmployee from "./Pages/HrEditEmployee/HrEditEmployee";
+import EmployeeEditEmployee from "./Pages/EmployeeEditEmployee/EmployeeEditEmployee";
 
 function App() {
   return (
@@ -64,6 +77,7 @@ function App() {
          <Route path="employeeUpdateById/:id" element={<EditEmployee />} />
         <Route path="/hr-dashboard" element={<HrDashboard />} />
         <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
+
          <Route path="/hr-dashboard" element={<HrDashboard />}>
           <Route index element={<HrDashboardHome />} />         // dashboard overview
           <Route path="reportees" element={<HrReportees />} />  // view employees
@@ -74,11 +88,30 @@ function App() {
           <Route path="tasks/add" element={<HrAddTask />} />          // assign task
           <Route path="tasks/details" element={<HrTaskDetails />} />
           <Route path="attendance" element={<HrAttendance />} /> // attendance
+          <Route path="settings/profile" element={<HrProfile />} />
           <Route path="settings/change-password" element={<HrChangePassword />} />
           <Route path="notification" element={<HrNotification />} /> // notifications
           <Route path="update-task/:id" element={<HrUpdateTask />} />
         </Route>
-        
+        <Route path="hremployeeUpdateById/:id" element={<HrEditEmployee />} />
+
+
+        <Route path="/employee-dashboard" element={<EmployeeDashboard />}>
+          <Route index element={<EmployeeDashboardHome />} />         // dashboard overview
+          <Route path="todo" element={<EmployeeTodo />} />  // view employees
+          {/* <Route path="leaves" element={<HrLeaves />} />        // approve/reject leave */}
+          <Route path="leaves/apply" element={<EmployeeApplyLeave />} /> 
+          
+          <Route path="leaves/summary" element={<EmployeeLeaveSummary />} /> 
+               
+          <Route path="tasks/details" element={<EmployeeTaskDetails />} />
+          <Route path="attendance" element={<EmployeeAttendance />} /> // attendance
+          <Route path="settings/change-password" element={<EmployeeChangePassword />} />
+          <Route path="settings/profile" element={<EmployeeProfile />} />
+          <Route path="notification" element={<EmployeeNotification />} /> // notifications
+          <Route path="update-task/:id" element={<EmployeeUpdateTask />} />
+        </Route>
+          <Route path="empemployeeUpdateById/:id" element={<EmployeeEditEmployee />} />
       </Routes>
     </Router>
   );

@@ -22,15 +22,28 @@ function Reports() {
     if (res.data.isSuccess) setSummary(res.data);
   };
 
-  const fetchEmployees = async () => {
+const fetchEmployees = async () => {
+  try {
     const res = await api.get("/tasks/fetchAllTasks");
-    if (res.data.isSuccess) {
-      const unique = [
-        ...new Set(res.data.tasks.map((task) => task.assignedTo)),
+
+    if (res.data.isSuccess && res.data.data?.tasks) {
+      const tasks = res.data.data.tasks;
+
+      const uniqueEmployees = [
+        ...new Set(
+          tasks
+            .map((task) => task.assignedTo)
+            .filter(Boolean) // remove null / undefined
+        ),
       ];
-      setEmployees(unique);
+
+      setEmployees(uniqueEmployees);
     }
-  };
+  } catch (error) {
+    console.error("Error fetching employees", error);
+  }
+};
+
 
   const fetchEmployeeSummary = async (employee) => {
  

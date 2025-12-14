@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../Services/api";  // axios instance
 import { useNotifications } from "../../Context/NotificationContext";
 
-function HrNotification() {
+function EmployeeNotification() {
   const { notifications, loadNotifications, markLocalRead } = useNotifications();
   const [page, setPage] = useState(0);
   const [size] = useState(10);
@@ -12,7 +12,7 @@ function HrNotification() {
 
   // fetch paginated notifications
   useEffect(() => {
-    loadNotifications(page, size, "HR"); // pass HR role or endpoint if needed
+    loadNotifications(page, size, "EMPLOYEE"); // pass HR role or endpoint if needed
   }, [page]);
 
   const markAsRead = async (notificationId) => {
@@ -28,7 +28,7 @@ function HrNotification() {
 
   return (
     <div style={{ maxWidth: 800, margin: "20px auto", padding: "0 20px" }}>
-      <h2 style={{ marginBottom: 20, fontSize: 28, color: "#333" }}>🔔 Notifications</h2>
+      <h2 style={{ marginBottom: 20, fontSize: 28, color: "#333" }}>🔔 My Notifications</h2>
 
       {notifications.length === 0 && (
         <p style={{ textAlign: "center", color: "#777", fontSize: 16 }}>
@@ -51,7 +51,6 @@ function HrNotification() {
           >
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
               <strong>{n.type}</strong>
-              {/* <small>{new Date(n.createdAt).toLocaleString("en-US", { hour12: true })}</small> */}
               <small>{n.createdAt}</small>
 
             </div>
@@ -70,5 +69,5 @@ function HrNotification() {
   );
 }
 
-export default HrNotification;
+export default EmployeeNotification;
 

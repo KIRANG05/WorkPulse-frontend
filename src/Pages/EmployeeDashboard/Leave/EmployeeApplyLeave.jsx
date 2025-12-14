@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import api from "../../../Services/api";
-import styles from "./ApplyLeave.module.css";
+import styles from "./EmployeeApplyLeave.module.css";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-function ApplyLeave() {
+function EmployeeApplyLeave() {
   const navigate = useNavigate();
   const userId = localStorage.getItem("userId");
 
@@ -162,4 +162,4 @@ const handleApply = async () => {
   );
 }
 
-export default ApplyLeave;
+export default EmployeeApplyLeave;

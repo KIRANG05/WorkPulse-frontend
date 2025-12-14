@@ -136,7 +136,9 @@ onClick={() => handleSingleNotificationClick(n.id)}
     >
       <strong>{index + 1}. {n.message}</strong>
       <small style={{ color: "#888", fontSize: "0.8rem" }}>
-        {new Date(n.createdAt).toLocaleString("en-IN")}
+        {/* {new Date(n.createdAt).toLocaleString("en-IN")} */}
+        {n.createdAt}
+
       </small>
     </div>
   ))

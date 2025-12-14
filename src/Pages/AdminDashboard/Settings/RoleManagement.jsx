@@ -11,13 +11,13 @@ function RoleManagement() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await api.get("/employee/employeeDetails");
+        const response = await api.get("/users/allUsers");
         if (response.data.isSuccess) {
-          setEmployees(response.data.employees || []);
+          setEmployees(response.data.users  || []);
           // Initialize selectedRoles with current roles
           const initialRoles = {};
-          response.data.employees.forEach(emp => {
-            initialRoles[emp.id] = emp.role;
+          response.data.users.forEach(user  => {
+            initialRoles[user.id] = user.role;
           });
           setSelectedRoles(initialRoles);
         }
@@ -64,7 +64,7 @@ function RoleManagement() {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>User ID</th>
             <th>Name</th>
             <th>Current Role</th>
             <th>Role</th>
@@ -80,7 +80,7 @@ function RoleManagement() {
             employees.map((emp) => (
               <tr key={emp.id}>
                 <td>{emp.id}</td>
-                <td>{emp.name}</td>
+                <td>{emp.username}</td>
                 <td>{emp.role}</td>
                 <td>
                   <select

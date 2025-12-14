@@ -121,7 +121,9 @@ useEffect(() => {
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
               <strong>{n.type}</strong>
               <small>
-                {new Date(n.createdAt).toLocaleString("en-US", { hour12: true })}
+                {/* {new Date(n.createdAt).toLocaleString("en-US", { hour12: true })} */}
+                <small>{n.createdAt}</small>
+
               </small>
             </div>
             <p style={{ margin: 0 }}>{n.message}</p>

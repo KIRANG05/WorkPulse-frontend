@@ -26,7 +26,7 @@ function Tasks() {
   const fetchAllTasks = async () => {
     try {
       const response = await api.get("/tasks/fetchAllTasks");
-      setTasks(response.data.tasks || []);
+      setTasks(response.data.data.tasks || []);
     } catch (err) {
       console.error("Error fetching tasks", err);
     }
@@ -55,7 +55,7 @@ function Tasks() {
       const response = await api.get("/tasks/filter", {
         params: queryParams,
       });
-      setTasks(response.data.tasks || []);
+      setTasks(response.data.data.tasks || []);
     } catch (err) {
       console.error("Error fetching filtered tasks", err);
     }

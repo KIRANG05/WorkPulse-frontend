@@ -1,0 +1,112 @@
+/* Full-screen container */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 40px;
+  background: #f8f9fa;
+  box-sizing: border-box;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Top bar */
+.topBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.datePicker,
+.searchBox {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.addBtn,
+.filterBtn {
+  padding: 8px 14px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.filterBtn {
+  background-color: #2196f3;
+}
+
+.addBtn:hover,
+.filterBtn:hover {
+  opacity: 0.9;
+}
+
+/* Scrollable table */
+.tableContainer {
+  overflow-x: auto;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table th {
+  background-color: #f1f1f1;
+  font-weight: 600;
+}
+
+.table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.table td button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.table td button:hover {
+  opacity: 0.7;
+}
+
+/* No Data Card */
+.noDataCard {
+  width: 400px;
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 22px;
+  color: #555;
+}

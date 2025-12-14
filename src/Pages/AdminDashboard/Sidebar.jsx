@@ -35,7 +35,7 @@ function Sidebar() {
           className={isActive("/admin-dashboard/employees") ? styles.active : ""}
           onClick={() => navigate("/admin-dashboard/employees")}
         >
-          👨‍💼 Employees
+          👨‍💼 User Details
         </li>
 
         <li

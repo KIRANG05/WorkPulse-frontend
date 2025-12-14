@@ -20,7 +20,7 @@ function HrAddTask() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await api.get("/employee/employeeDetails");
+        const res = await api.get("/employee/reportees");
         if (res.data.isSuccess) {
           setEmployees(res.data.employees);
         }

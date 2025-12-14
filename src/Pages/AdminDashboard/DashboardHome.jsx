@@ -34,7 +34,7 @@ const handlePunchIn = async () => {
       title: res.data.message,
       text:"You have successfully punched in!",   // backend message
       timer: 2000,
-      showConfirmButton: false,
+      // showConfirmButton: false,
     });
 
     if (res.data.isSuccess) {
@@ -59,7 +59,7 @@ const handlePunchOut = async () => {
       title: res.data.message,
       text:"You have been Punched out successfully!" , // backend message
       timer: 2000,
-      showConfirmButton: false,
+      // showConfirmButton: false,
     });
 
     if (res.data.isSuccess) {

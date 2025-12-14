@@ -1,0 +1,99 @@
+.container {
+  background: #ffffff;
+  padding: 28px;
+  width: 75%;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.10);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.inputGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroupFull {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+select,
+input,
+textarea {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #cdd6dd;
+}
+
+textarea {
+  resize: none;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cancelBtn {
+  background: transparent;
+  border: 1px solid #2b6cb0;
+  color: #2b6cb0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.applyBtn {
+  background: #2b6cb0;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.applyBtn:hover {
+  background: #1f5087;
+}
+
+.cancelBtn:hover {
+  background: #e6f0ff;
+}
+
+.message {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}

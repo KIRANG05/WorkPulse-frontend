@@ -147,7 +147,7 @@ function HrReportees() {
   const fetchData = async () => {
     try {
       // 1️⃣ Fetch all employee details
-      const empRes = await api.get("/employee/employeeDetails");
+      const empRes = await api.get("/employee/reportees");
       const empList = empRes.data.employees || [];
       setEmployees(empList);
 
@@ -156,7 +156,7 @@ function HrReportees() {
       if (attRes.data.isSuccess) {
         const attMap = {};
         attRes.data.data.forEach((att) => {
-          attMap[att.empId] = att; // Map by empId
+          attMap[att.userId] = att; // Map by empId
         });
         setAttendanceMap(attMap);
       }
@@ -185,7 +185,7 @@ function HrReportees() {
         <tbody>
           {employees.length > 0 ? (
             employees.map((emp) => {
-              const att = attendanceMap[emp.id]; // get attendance for this emp
+              const att = attendanceMap[emp.userId]; // get attendance for this emp
               return (
                 <tr key={emp.id}>
                   <td>{emp.id}</td>

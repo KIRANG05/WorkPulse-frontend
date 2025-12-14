@@ -168,11 +168,11 @@
 // export default EditEmployee;
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import styles from "./EditEmployee.module.css";
+import styles from "./EmployeeEditEmployee.module.css";
 import Swal from "sweetalert2";
 import api from "../../Services/api";
 
-function EditEmployee() {
+function EmployeeEditEmployee() {
   const { id } = useParams(); // userId
   const navigate = useNavigate();
 
@@ -264,7 +264,7 @@ function EditEmployee() {
       });
 
       Swal.fire("Success", response.data.message, "success");
-      navigate("/admin-dashboard/employees");
+      navigate("/Employee-dashboard/settings/profile");
     } catch (err) {
       console.error("Update error:", err);
       Swal.fire("Error", err.response?.data?.message || "Update failed", "error");
@@ -348,7 +348,7 @@ function EditEmployee() {
 
       <button
         className={styles.backBtn}
-        onClick={() => navigate("/admin-dashboard/employees")}
+        onClick={() => navigate("/Employee-dashboard/settings/profile")}
       >
         Back
       </button>
@@ -356,7 +356,7 @@ function EditEmployee() {
   );
 }
 
-export default EditEmployee;
+export default EmployeeEditEmployee;
 
 
 

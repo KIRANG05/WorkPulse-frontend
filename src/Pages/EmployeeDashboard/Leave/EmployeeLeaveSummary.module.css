@@ -1,0 +1,86 @@
+.container {
+  padding: 20px;
+}
+
+.heading {
+  font-size: 22px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: 0.2s;
+}
+.card:hover {
+  transform: scale(1.01);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.leaveType {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.status {
+  padding: 4px 12px;
+  font-size: 13px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Status colors */
+.pending {
+  background: #fff4c4;
+  color: #b68a00;
+}
+
+.approved {
+  background: #d5f7d8;
+  color: #1c7c2b;
+}
+
+.rejected {
+  background: #ffd5d5;
+  color: #b30021;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+  font-size: 14px;
+}
+.infoRow span {
+  font-weight: 600;
+  color: #444;
+}
+.infoRow p {
+  margin: 0;
+  color: #555;
+}
+
+.footer {
+  margin-top: 12px;
+  font-size: 13px;
+  text-align: right;
+  color: #777;
+  font-style: italic;
+}
+.noData {
+  margin-top: 40px;
+  text-align: center;
+  color: gray;
+}
