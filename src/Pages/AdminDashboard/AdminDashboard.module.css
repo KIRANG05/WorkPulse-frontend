@@ -224,3 +224,10 @@
   margin-top: 8px;
   font-size: 14px;
 }
+
+
+.card p {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 8px;
+}

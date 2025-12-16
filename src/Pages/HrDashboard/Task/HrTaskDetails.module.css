@@ -104,11 +104,12 @@
 }
 
 .filters select,
-.filters input,
-.filters button {
+.filters input
+{
   padding: 6px 10px;
   font-size: 14px;
   border-radius: 4px;
+   width: 150px;
   border: 1px solid #ccc;
 }
 
@@ -117,6 +118,10 @@
   color: #fff;
   border: none;
   cursor: pointer;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 .filters button:hover {
@@ -259,3 +264,4 @@
   background-color: #f9f9f9; /* light background like dropdown */
   cursor: not-allowed;
 }
+

@@ -112,7 +112,7 @@ const COLORS = {
     <div className={styles.dashboardHome}>
       {/* HEADER + Punch Button */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h2>Employee Dashboard</h2>
+        <h2>Dashboard Overview</h2>
 
         {!todayAttendance?.loginTime ? (
           <button 

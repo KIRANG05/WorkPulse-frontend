@@ -188,7 +188,7 @@ function Employees() {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Emp Id</th>
+            <th>User Id</th>
             <th>Profile Image</th>
             <th>Name</th>
             <th>Company</th>

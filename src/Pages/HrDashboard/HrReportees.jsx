@@ -168,7 +168,7 @@ function HrReportees() {
   return (
     <div className={styles.employeeList}>
       <div className={styles.header}>
-        <h2>Reportees (Attendance Today)</h2>
+        <h2>Reportees</h2>
       </div>
 
       <table className={styles.table}>
